@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
     {
 
         //rb.velocity = transform.right * moveSpeed;
-        rb.velocity = (transform.position + screenPoint).normalized;
+        rb.velocity = (screenPoint - transform.position).normalized*moveSpeed;
     }
 
 
