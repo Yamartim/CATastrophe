@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class D20 : Dado
 {
+
+    public override int lados {get{return 20;}}
+
     void Awake()
     {
-        lados = 20;
+        
     }
     
 }

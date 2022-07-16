@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class D8 : Dado
 {
+    public override int lados {get{return 8;}}
+
     void Awake()
     {
-        lados = 8;
+
     }
     
 }

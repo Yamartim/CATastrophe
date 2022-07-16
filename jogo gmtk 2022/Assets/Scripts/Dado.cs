@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Dado : MonoBehaviour
 {
-    protected int lados;
+    public abstract int lados {get;}
     private int valor;
 
     // Start is called before the first frame update

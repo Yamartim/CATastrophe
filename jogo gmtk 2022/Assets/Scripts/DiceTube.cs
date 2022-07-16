@@ -5,6 +5,7 @@ using UnityEngine;
 public class DiceTube : MonoBehaviour
 {
     private DadoFactory df;
+    private tuboUI tUI;
 
     [SerializeField]private int tam_fila = 5;
     private Queue<GameObject> fila_dados;
@@ -16,6 +17,8 @@ public class DiceTube : MonoBehaviour
     void Start()
     {
         df = GetComponent<DadoFactory>();
+        tUI = GetComponent<tuboUI>();
+
         fila_dados = new Queue<GameObject>();
         EncherFilaRand();
 
@@ -30,6 +33,7 @@ public class DiceTube : MonoBehaviour
     void AddDado(TipoDado td)
     {
         fila_dados.Enqueue(df.GetDado(td));
+        tUI.RefreshDados(GetFilaDados());
 
     }
 
@@ -37,7 +41,9 @@ public class DiceTube : MonoBehaviour
     {
         if(fila_dados.Count == 0)
             return null;
-        return fila_dados.Dequeue();
+        GameObject dado = fila_dados.Dequeue();
+        tUI.RefreshDados(GetFilaDados());
+        return dado;
     }
 
     void EncherFilaRand()
@@ -49,6 +55,7 @@ public class DiceTube : MonoBehaviour
             fila_dados.Enqueue(df.GetDado(rand));
 
         }
+        tUI.RefreshDados(GetFilaDados());
     }
 
     void ChacoalharDados()
@@ -57,6 +64,12 @@ public class DiceTube : MonoBehaviour
         {
             dado.GetComponent<Dado>().RolaValor();
         }
+        tUI.RefreshDados(GetFilaDados());
+    }
+
+    GameObject[] GetFilaDados()
+    {
+        return fila_dados.ToArray();
     }
 
 }

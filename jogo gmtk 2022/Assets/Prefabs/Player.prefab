@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5763829012533115771}
   - component: {fileID: 5763829012533115770}
   - component: {fileID: 4178990182503551927}
+  - component: {fileID: 6656870416215983921}
   m_Layer: 0
   m_Name: Arma
   m_TagString: Untagged
@@ -45,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a1cb8de4c04624ea8f3618310da4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tam_fila: 5
 --- !u!114 &4178990182503551927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,7 +59,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f51c7c9eb06e7408dfd2841e860061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 4595574918968658742, guid: ecf4b3180a931bc4eb9e0c4f9eb7fdfa, type: 3}
+  shootforce: 10
+--- !u!114 &6656870416215983921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763829012533115768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 232ccbeedd8e82f4a87d06208b5b29a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  d4prefab: {fileID: 7535125704643225733, guid: 11cdc9e54bd574242b7545f1e72b552b, type: 3}
+  d6prefab: {fileID: 4670499119485848884, guid: 1d94bc469d31fa141b343af9a02048ff, type: 3}
+  d8prefab: {fileID: 4068033542103849877, guid: 3c7bb8f0891f0804aae43ddc1e33ad2d, type: 3}
+  d10prefab: {fileID: 812779775222605811, guid: 2b619ace6c4246843bf1fdcccce17b42, type: 3}
+  d12prefab: {fileID: 7379739761388732908, guid: 554d81d42282a3b41b70d5823a937fa5, type: 3}
+  d20prefab: {fileID: 1766072451009169025, guid: ac9998fa7c3d443458f93377b1808175, type: 3}
 --- !u!1 &5763829012542403992
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 10
   maxHp: 10
+  score: 0
 --- !u!114 &5763829012542404007
 MonoBehaviour:
   m_ObjectHideFlags: 0
