@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class D20 : Dado
 {
-    int lados = 20;
+    void Awake()
+    {
+        lados = 20;
+    }
     
 }

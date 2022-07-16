@@ -5,5 +5,8 @@ using UnityEngine;
 
 public class D4 : Dado
 {
-    int lados = 6;
+    void Awake()
+    {
+        lados = 6;
+    }
 }    

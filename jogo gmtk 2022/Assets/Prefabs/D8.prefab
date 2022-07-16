@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2063218500986659737}
   - component: {fileID: 670434813909506982}
   - component: {fileID: 5493650164485792130}
+  - component: {fileID: 8081574371969298415}
   m_Layer: 0
   m_Name: D8
   m_TagString: Untagged
@@ -97,3 +98,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6327f031d45d1c44aaf4162d64cc088f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &8081574371969298415
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4068033542103849877}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Dado : MonoBehaviour
 {
-    private int lados;
+    protected int lados;
     private int valor;
 
     // Start is called before the first frame update
@@ -18,11 +18,14 @@ public abstract class Dado : MonoBehaviour
         valor = Random.Range(1, lados);
     }
 
+    void OnCollisionEnter2D(Collision2D coll) 
+    {
+        Destroy(gameObject, 2f);
+    }
+
+    void OnBecameInvisible() {
+        Destroy(gameObject);
+    }
+
 }
-
-
-
-
-
-
 
