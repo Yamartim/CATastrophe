@@ -34,4 +34,13 @@ public class Enemy : MonoBehaviour
         rb.velocity = (player.transform.position - transform.position).normalized * moveSpeed;
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+    }
+
 }
