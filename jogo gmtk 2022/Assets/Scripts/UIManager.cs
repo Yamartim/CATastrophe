@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private Slider hpSlider;
     public GameObject gameOverPanel;
+    public TextMeshProUGUI scoreText;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
     private void Update()
     {
         hpSlider.value = player.hp / player.maxHp;
+        scoreText.text = "Score: " + player.score;
     }
 
     public void TryAgain()

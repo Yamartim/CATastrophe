@@ -67,5 +67,9 @@ public class Player : MonoBehaviour
     public void ScoreUp()
     {
         score++;
+        if(score > PlayerPrefs.GetInt("highscore"))
+        {
+            PlayerPrefs.SetInt("highscore", score);
+        }
     }
 }
