@@ -5,17 +5,17 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private ArmaScript arma;
 
     // movement
     private float moveSpeed = 5;
     private Vector2 moveInput;
 
-    // shooting
-    [SerializeField] private GameObject bullet;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        arma = GetComponentInChildren<ArmaScript>();
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         // Shotting
         if (Input.GetMouseButtonDown(0))
         {
-             Shoot();
+             arma.Shoot();
         }
 
     }
@@ -39,9 +39,5 @@ public class Player : MonoBehaviour
         rb.velocity = moveInput * moveSpeed; // * Time.deltaTime;
     }
 
-    private void Shoot()
-    {
-        Instantiate(bullet, transform.position, Quaternion.identity);
-    }
 
 }
