@@ -18,6 +18,8 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         screenPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        rb.velocity = (screenPoint - transform.position).normalized*moveSpeed;
+        //rb.velocity = transform.right * moveSpeed;
 
     }
 
@@ -29,9 +31,11 @@ public class Bullet : MonoBehaviour
     private void FixedUpdate()
     {
 
-        //rb.velocity = transform.right * moveSpeed;
-        rb.velocity = (screenPoint - transform.position).normalized*moveSpeed;
     }
 
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 
 }
