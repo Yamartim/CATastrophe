@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float moveSpeed = 10;
+    private float moveSpeed = 10f;
 
     Vector3 screenPoint;
 
@@ -18,8 +18,10 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         screenPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        rb.velocity = (screenPoint - transform.position).normalized*moveSpeed;
+        //rb.AddForce((screenPoint - transform.position).normalized*moveSpeed, ForceMode2D.Impulse);
+        rb.velocity = ((Vector2)screenPoint - (Vector2)transform.position).normalized*moveSpeed;
         //rb.velocity = transform.right * moveSpeed;
+        //Debug.Log((screenPoint - transform.position));
 
     }
 
