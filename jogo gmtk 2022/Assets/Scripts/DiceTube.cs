@@ -5,10 +5,10 @@ using UnityEngine;
 public class DiceTube : MonoBehaviour
 {
     private DadoFactory df;
-    private tuboUI tUI;
+    [SerializeField] private tuboUI tUI;
 
     [SerializeField]private int tam_fila = 5;
-    private Queue<GameObject> fila_dados;
+    private Queue<Dado> fila_dados;
 
 
 
@@ -17,9 +17,8 @@ public class DiceTube : MonoBehaviour
     void Start()
     {
         df = GetComponent<DadoFactory>();
-        tUI = GetComponent<tuboUI>();
 
-        fila_dados = new Queue<GameObject>();
+        fila_dados = new Queue<Dado>();
         EncherFilaRand();
 
     }
@@ -30,20 +29,21 @@ public class DiceTube : MonoBehaviour
         
     }
 
-    void AddDado(TipoDado td)
+    void AddDado(Dado d)
     {
-        fila_dados.Enqueue(df.GetDado(td));
-        tUI.RefreshDados(GetFilaDados());
+        fila_dados.Enqueue(d);
+        tUI.RefreshDados(GetDados());
 
     }
 
-    public GameObject TiraDado()
+    public Dado TiraDado()
     {
-        if(fila_dados.Count == 0)
-            return null;
-        GameObject dado = fila_dados.Dequeue();
-        tUI.RefreshDados(GetFilaDados());
-        return dado;
+        Dado dado;
+        if (fila_dados.TryDequeue(out dado))
+        {
+            tUI.RefreshDados(GetDados());
+            return dado;
+        } return null;
     }
 
     void EncherFilaRand()
@@ -52,22 +52,22 @@ public class DiceTube : MonoBehaviour
         while(fila_dados.Count < tam_fila)
         {
             rand = (TipoDado)Random.Range(0, 5);
-            fila_dados.Enqueue(df.GetDado(rand));
+            fila_dados.Enqueue(df.GetDado(rand).GetComponent<Dado>());
 
         }
-        tUI.RefreshDados(GetFilaDados());
+        tUI.RefreshDados(GetDados());
     }
 
     void ChacoalharDados()
     {
-        foreach(GameObject dado in fila_dados)
+        foreach(Dado d in fila_dados)
         {
-            dado.GetComponent<Dado>().RolaValor();
+            d.RolaValor();
         }
-        tUI.RefreshDados(GetFilaDados());
+        tUI.RefreshDados(GetDados());
     }
 
-    GameObject[] GetFilaDados()
+    Dado[] GetDados()
     {
         return fila_dados.ToArray();
     }

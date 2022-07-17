@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5763829012533115770}
   - component: {fileID: 4178990182503551927}
   - component: {fileID: 6656870416215983921}
-  - component: {fileID: 1838982761}
   m_Layer: 0
   m_Name: Arma
   m_TagString: Untagged
@@ -79,30 +78,6 @@ MonoBehaviour:
   d10prefab: {fileID: 812779775222605811, guid: 2b619ace6c4246843bf1fdcccce17b42, type: 3}
   d12prefab: {fileID: 7379739761388732908, guid: 554d81d42282a3b41b70d5823a937fa5, type: 3}
   d20prefab: {fileID: 1766072451009169025, guid: ac9998fa7c3d443458f93377b1808175, type: 3}
---- !u!114 &1838982761
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5763829012533115768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac3f7b2d6d40bd3448cc848d1c3eab7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  d4sprt: {fileID: -65574994, guid: 4b1e8d88238c167479231d617e133571, type: 3}
-  d6sprt: {fileID: -677754847, guid: 4b1e8d88238c167479231d617e133571, type: 3}
-  d8sprt: {fileID: -1676993267, guid: 4b1e8d88238c167479231d617e133571, type: 3}
-  d10sprt: {fileID: 176895450, guid: 4b1e8d88238c167479231d617e133571, type: 3}
-  d12sprt: {fileID: 1039283728, guid: 4b1e8d88238c167479231d617e133571, type: 3}
-  d20sprt: {fileID: 246011102, guid: 4b1e8d88238c167479231d617e133571, type: 3}
 --- !u!1 &5763829012542403992
 GameObject:
   m_ObjectHideFlags: 0

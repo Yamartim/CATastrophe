@@ -26,17 +26,16 @@ public class tuboUI : MonoBehaviour
         
     }
 
-    public void RefreshDados(GameObject[] qd)
+    public void RefreshDados(Dado[] qd)
     {
         for(int i = 0; i < 5; i++)
         {
             if(i < qd.Length)
             {
 
-                TipoDado t = qd[i].gameObject.GetComponent<Dado>().tipo;
                 slots[i].color = Color.white;
 
-                switch(t)
+                switch(qd[i].tipo)
                 {
                     case TipoDado.d4:
                         slots[i].sprite = d4sprt;
