@@ -6,6 +6,7 @@ using UnityEditor;
 public class Enemy : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
     private Player player;
 
     private float chaseRange = 7f;
@@ -21,6 +22,7 @@ public class Enemy : MonoBehaviour
     {
         hp = maxhp;
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
         deathParticles = (ParticleSystem)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Particles/Death Particles.prefab", typeof(ParticleSystem));
         collectible = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Collectible.prefab", typeof(GameObject));
@@ -28,6 +30,9 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        anim.SetFloat("HORI_MOVE", rb.velocity.x);
+
+
         if (Vector3.Distance(transform.position, player.transform.position) <= chaseRange)
         {
             Chase();
@@ -47,25 +52,23 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         hp -= dmg;
+        anim.SetTrigger("DMG");
         if(hp <= 0)
         {
             Instantiate(collectible, this.gameObject.transform.position,this.gameObject.transform.rotation, null);
-            Destroy(collision.gameObject);
             Destroy(gameObject);
             player.ScoreUp(1);
         }
     }
 
-/*
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
         {
-
             Destroy(collision.gameObject);
-            
-            player.ScoreUp(1);
+            TakeDamage(20);
         }
     }
-*/
+
 }
