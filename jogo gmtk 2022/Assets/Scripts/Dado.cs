@@ -1,16 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public abstract class Dado : MonoBehaviour
 {
     public abstract int lados {get;}
     private int valor;
+    TMP_Text valor_txt;
 
-    // Start is called before the first frame update
-    void Start()
-    {
+    private void Start() {
+
+        valor_txt = GetComponentInChildren<TMP_Text>();
         RolaValor();
+        valor_txt.text = valor.ToString();
+        
     }
 
     public void RolaValor()
