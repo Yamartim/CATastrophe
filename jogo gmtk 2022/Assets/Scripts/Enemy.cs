@@ -61,6 +61,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
+            TakeDamage(20);
         }
     }
 
