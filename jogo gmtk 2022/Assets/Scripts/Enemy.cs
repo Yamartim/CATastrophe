@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
-            TakeDamage(20);
+            TakeDamage(collision.gameObject.GetComponent<Dado>().valor);
         }
     }
 

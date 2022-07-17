@@ -5,6 +5,7 @@ using UnityEngine;
 public class Room : MonoBehaviour
 {
     private Generation generation;
+    [SerializeField] DiceTube tubo;
 
     public List<GameObject> enemies = new List<GameObject>();
 
@@ -27,6 +28,7 @@ public class Room : MonoBehaviour
         if(enemies.Count == 0)
         {
             generation.NewRoom();
+            tubo.EncherFilaRand();
         }
 
     }
