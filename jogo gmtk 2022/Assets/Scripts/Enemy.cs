@@ -50,22 +50,18 @@ public class Enemy : MonoBehaviour
         if(hp <= 0)
         {
             Instantiate(collectible, this.gameObject.transform.position,this.gameObject.transform.rotation, null);
-            Destroy(collision.gameObject);
             Destroy(gameObject);
             player.ScoreUp(1);
         }
     }
 
-/*
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
         {
-
             Destroy(collision.gameObject);
-            
-            player.ScoreUp(1);
         }
     }
-*/
+
 }
