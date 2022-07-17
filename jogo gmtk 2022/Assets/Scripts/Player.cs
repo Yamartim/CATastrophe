@@ -47,12 +47,23 @@ public class Player : MonoBehaviour
         rb.velocity = moveInput * moveSpeed; // * Time.deltaTime;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int dmg)
     {
-        hp--;
+        hp -= dmg;
         if(hp <= 0)
         {
             gameManager.GameOver();
+        }
+    }
+
+    public void Heal(int hl)
+    {
+        if((hp + hl) >= maxHp)
+        {
+            hp = maxHp;
+        }else
+        {
+            hp += hl;
         }
     }
 
@@ -60,13 +71,13 @@ public class Player : MonoBehaviour
     {
         if(collision.gameObject.tag == "Enemy")
         {
-            TakeDamage();
+            TakeDamage(1);
         }
     }
 
-    public void ScoreUp()
+    public void ScoreUp(int scr)
     {
-        score++;
+        score += scr;
         if(score > PlayerPrefs.GetInt("highscore"))
         {
             PlayerPrefs.SetInt("highscore", score);
