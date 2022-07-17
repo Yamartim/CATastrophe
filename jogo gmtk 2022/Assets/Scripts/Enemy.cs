@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Enemy : MonoBehaviour
 {
@@ -13,11 +14,16 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int maxhp = 10;
     
 
+    public ParticleSystem deathParticles;
+    public GameObject collectible;
+
     private void Start()
     {
         hp = maxhp;
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
+        deathParticles = (ParticleSystem)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Particles/Death Particles.prefab", typeof(ParticleSystem));
+        collectible = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Collectible.prefab", typeof(GameObject));
     }
 
     private void FixedUpdate()
@@ -43,6 +49,8 @@ public class Enemy : MonoBehaviour
         hp -= dmg;
         if(hp <= 0)
         {
+            Instantiate(collectible, this.gameObject.transform.position,this.gameObject.transform.rotation, null);
+            Destroy(collision.gameObject);
             Destroy(gameObject);
             player.ScoreUp(1);
         }
