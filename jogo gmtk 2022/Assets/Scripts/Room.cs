@@ -11,7 +11,8 @@ public class Room : MonoBehaviour
 
     private void Start()
     {
-        generation = FindObjectOfType<Generation>();   
+        generation = FindObjectOfType<Generation>();  
+        tubo = FindObjectOfType<Player>().gameObject.GetComponentInChildren<DiceTube>();
     }
 
     private void Update()
@@ -27,6 +28,10 @@ public class Room : MonoBehaviour
 
         if(enemies.Count == 0)
         {
+            GameObject[] collectibles = GameObject.FindGameObjectsWithTag("Collectible");
+            foreach(GameObject item in collectibles){
+                GameObject.Destroy(item);
+            }
             generation.NewRoom();
             tubo.EncherFilaRand();
         }
