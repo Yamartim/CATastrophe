@@ -9,13 +9,17 @@ public class Enemy : MonoBehaviour
     private Player player;
 
     private float chaseRange = 7f;
-    private float moveSpeed = 2f;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private int hp;
+    [SerializeField] private int maxhp = 10;
+    
 
     public ParticleSystem deathParticles;
     public GameObject collectible;
 
     private void Start()
     {
+        hp = maxhp;
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
         deathParticles = (ParticleSystem)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Particles/Death Particles.prefab", typeof(ParticleSystem));
@@ -40,9 +44,10 @@ public class Enemy : MonoBehaviour
         rb.velocity = (player.transform.position - transform.position).normalized * moveSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage(int dmg)
     {
-        if (collision.gameObject.tag == "Bullet")
+        hp -= dmg;
+        if(hp <= 0)
         {
             Instantiate(collectible, this.gameObject.transform.position,this.gameObject.transform.rotation, null);
             Destroy(collision.gameObject);
@@ -51,4 +56,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
+/*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+
+            Destroy(collision.gameObject);
+            
+            player.ScoreUp(1);
+        }
+    }
+*/
 }

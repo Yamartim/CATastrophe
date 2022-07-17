@@ -21,6 +21,10 @@ public abstract class Dado : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D coll) 
     {
+        if (coll.gameObject.tag == "Enemy")
+        {
+            coll.gameObject.GetComponent<Enemy>().TakeDamage(valor);
+        }
         Destroy(gameObject, 2f);
     }
 
