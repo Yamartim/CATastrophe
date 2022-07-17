@@ -56,7 +56,7 @@ public class DiceTube : MonoBehaviour
         } return null;
     }
 
-    void EncherFilaRand()
+    public void EncherFilaRand()
     {
         TipoDado rand;
         while(fila_dados.Count < tam_fila)
