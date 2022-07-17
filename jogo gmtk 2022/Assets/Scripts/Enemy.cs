@@ -8,10 +8,14 @@ public class Enemy : MonoBehaviour
     private Player player;
 
     private float chaseRange = 7f;
-    private float moveSpeed = 2f;
+    [SerializeField] private float moveSpeed = 2f;
+    [SerializeField] private int hp;
+    [SerializeField] private int maxhp = 10;
+    
 
     private void Start()
     {
+        hp = maxhp;
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();
     }
@@ -34,14 +38,26 @@ public class Enemy : MonoBehaviour
         rb.velocity = (player.transform.position - transform.position).normalized * moveSpeed;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void TakeDamage(int dmg)
     {
-        if (collision.gameObject.tag == "Bullet")
+        hp -= dmg;
+        if(hp <= 0)
         {
-            Destroy(collision.gameObject);
             Destroy(gameObject);
             player.ScoreUp(1);
         }
     }
 
+/*
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+
+            Destroy(collision.gameObject);
+            
+            player.ScoreUp(1);
+        }
+    }
+*/
 }
