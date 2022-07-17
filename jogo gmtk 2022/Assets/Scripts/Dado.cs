@@ -6,6 +6,8 @@ using UnityEngine;
 public abstract class Dado : MonoBehaviour
 {
     public abstract int lados {get;}
+    public abstract TipoDado tipo {get;}
+
     private int valor;
     TMP_Text valor_txt;
 

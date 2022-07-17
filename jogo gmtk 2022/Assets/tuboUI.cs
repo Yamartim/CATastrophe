@@ -33,27 +33,27 @@ public class tuboUI : MonoBehaviour
             if(i < qd.Length)
             {
 
-                int lados = qd[i].gameObject.GetComponent<Dado>().lados;
+                TipoDado t = qd[i].gameObject.GetComponent<Dado>().tipo;
                 slots[i].color = Color.white;
 
-                switch(lados)
+                switch(t)
                 {
-                    case 4:
+                    case TipoDado.d4:
                         slots[i].sprite = d4sprt;
                         break;
-                    case 6:
+                    case TipoDado.d6:
                         slots[i].sprite = d6sprt;
                         break;
-                    case 8:
+                    case TipoDado.d8:
                         slots[i].sprite = d8sprt;
                         break;
-                    case 10:
+                    case TipoDado.d10:
                         slots[i].sprite = d10sprt;
                         break;
-                    case 12:
+                    case TipoDado.d12:
                         slots[i].sprite = d12sprt;
                         break;
-                    case 20:
+                    case TipoDado.d20:
                         slots[i].sprite = d20sprt;
                         break;
                     default:
