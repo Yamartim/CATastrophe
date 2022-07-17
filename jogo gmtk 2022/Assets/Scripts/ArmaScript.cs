@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ArmaScript : MonoBehaviour
 {
+    private AudioSource shootAudio;
+    private ParticleSystem shootParticle;
+    [SerializeField] GameObject particleTransform;
     [SerializeField] float shootforce = 1000;
     //[SerializeField] private GameObject bullet;
     private DiceTube tubo;
@@ -16,6 +19,8 @@ public class ArmaScript : MonoBehaviour
     {
         tubo = GetComponent<DiceTube>();
         df = GetComponent<DadoFactory>();
+        shootAudio = GetComponent<AudioSource>();
+        shootParticle = GetComponentInChildren<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -25,13 +30,22 @@ public class ArmaScript : MonoBehaviour
     }
 
     
-    public void Shoot()
+    public void Shoot(bool isFlipped)
     {
+        if(isFlipped){
+            particleTransform.transform.rotation = new Quaternion (0, 0, 0.7071068f, 0.7071068f);
+        }else{
+            particleTransform.transform.rotation = new Quaternion (0, 0, -0.7071068f, 0.7071068f);
+        }
         Dado dado = tubo.TiraDado();
         if (dado == null)
         {
             Debug.Log("sem munição!");
             return;
+        }else{
+            shootAudio.pitch = Random.Range(0.8f,1.2f);
+            shootAudio.Play();
+            shootParticle.Play();
         }
         GameObject tiro = Instantiate(df.GetDado(dado.tipo), transform.position, Quaternion.identity);
 

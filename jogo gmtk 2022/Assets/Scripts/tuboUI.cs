@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class tuboUI : MonoBehaviour
 {
-
     [SerializeField] private Image[] slots = new Image[5];
     [SerializeField] private Sprite d4sprt;
     [SerializeField] private Sprite d6sprt;
@@ -59,7 +59,12 @@ public class tuboUI : MonoBehaviour
                         slots[i].sprite = d20sprt;
                         break;
                 }
-            }else slots[i].color = Color.clear;
+                slots[i].gameObject.GetComponentInChildren<TMP_Text>().text = qd[i].valor.ToString();
+                
+            }else{
+                slots[i].color = Color.clear;
+                slots[i].gameObject.GetComponentInChildren<TMP_Text>().text = "";
+            }
         }
     }
 

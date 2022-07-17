@@ -7,22 +7,17 @@ public abstract class Dado : MonoBehaviour
 {
     public abstract int lados {get;}
     public abstract TipoDado tipo {get;}
-
-    private int valor;
+    public int valor;
     TMP_Text valor_txt;
 
-    private void Start() {
 
+    public void PosRolar(int rolado) {
+        valor = rolado;
         valor_txt = GetComponentInChildren<TMP_Text>();
-        RolaValor();
-        valor_txt.text = valor.ToString();
-        
+        valor_txt.text = rolado.ToString(); 
     }
 
-    public void RolaValor()
-    {
-        valor = Random.Range(1, lados);
-    }
+
 
     void OnCollisionEnter2D(Collision2D coll) 
     {
@@ -32,6 +27,7 @@ public abstract class Dado : MonoBehaviour
     void OnBecameInvisible() {
         Destroy(gameObject);
     }
+
 
 }
 

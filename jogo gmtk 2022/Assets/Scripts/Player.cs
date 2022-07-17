@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
         // Shotting
         if (Input.GetMouseButtonDown(0))
         {
-             arma.Shoot();
+             arma.Shoot(gameObject.GetComponent<SpriteRenderer>().flipX);
         }
 
     }

@@ -9,6 +9,7 @@ public class DiceTube : MonoBehaviour
 
     [SerializeField]private int tam_fila = 5;
     private Queue<Dado> fila_dados;
+    public int valorFinal;
 
 
 
@@ -20,7 +21,11 @@ public class DiceTube : MonoBehaviour
 
         fila_dados = new Queue<Dado>();
         EncherFilaRand();
+    }
 
+    public void RolaValor(Dado die)
+    {
+        valorFinal = Random.Range(1, die.lados);
     }
 
     // Update is called once per frame
@@ -31,6 +36,8 @@ public class DiceTube : MonoBehaviour
 
     void AddDado(Dado d)
     {
+        RolaValor(d);
+        d.PosRolar(valorFinal);
         fila_dados.Enqueue(d);
         tUI.RefreshDados(GetDados());
 
@@ -52,7 +59,10 @@ public class DiceTube : MonoBehaviour
         while(fila_dados.Count < tam_fila)
         {
             rand = (TipoDado)Random.Range(0, 5);
-            fila_dados.Enqueue(df.GetDado(rand).GetComponent<Dado>());
+            var lmao = df.GetDado(rand).GetComponent<Dado>();
+            RolaValor(lmao);
+            lmao.PosRolar(valorFinal);
+            fila_dados.Enqueue(lmao);
 
         }
         tUI.RefreshDados(GetDados());
@@ -62,7 +72,8 @@ public class DiceTube : MonoBehaviour
     {
         foreach(Dado d in fila_dados)
         {
-            d.RolaValor();
+            RolaValor(d);
+            d.PosRolar(valorFinal);
         }
         tUI.RefreshDados(GetDados());
     }
