@@ -5,7 +5,8 @@ using UnityEngine;
 public class DiceTube : MonoBehaviour
 {
     private DadoFactory df;
-    [SerializeField] private tuboUI tUI;
+    //[SerializeField] private tuboUI tUI;
+    private tuboUI tUI;
 
     [SerializeField]private int tam_fila = 5;
     private Queue<Dado> fila_dados;
@@ -18,6 +19,7 @@ public class DiceTube : MonoBehaviour
     void Start()
     {
         df = GetComponent<DadoFactory>();
+        tUI = FindObjectOfType<tuboUI>();
 
         fila_dados = new Queue<Dado>();
         EncherFilaRand();
