@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4012331109187326618}
   - component: {fileID: 3480755159419438559}
   - component: {fileID: 7633206563145162632}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: valuetxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 7333962900602878380}
   - component: {fileID: 4408623656645306781}
   - component: {fileID: -7441908697944309078}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: D12
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2.01
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

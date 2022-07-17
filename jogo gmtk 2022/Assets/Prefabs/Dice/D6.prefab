@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4564195929113979946}
   - component: {fileID: 1858094091224698690}
   - component: {fileID: 684990247159842057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: D6
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -114,7 +114,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2.01
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 3377890467868180430}
   - component: {fileID: 6400513258119066699}
   - component: {fileID: 3602203565814877040}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: valuetxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

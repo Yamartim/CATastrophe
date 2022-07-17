@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5763829012533115770}
   - component: {fileID: 4178990182503551927}
   - component: {fileID: 6656870416215983921}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a1cb8de4c04624ea8f3618310da4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tUI: {fileID: 0}
   tam_fila: 5
 --- !u!114 &4178990182503551927
 MonoBehaviour:
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f51c7c9eb06e7408dfd2841e860061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootforce: 10
+  shootforce: 20.5
 --- !u!114 &6656870416215983921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,7 +94,7 @@ GameObject:
   - component: {fileID: -9091440780876457610}
   - component: {fileID: 5763829012542403995}
   - component: {fileID: 5763829012542404007}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
