@@ -15,8 +15,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int maxhp = 10;
     
 
-    public ParticleSystem deathParticles;
-    public GameObject collectible;
+    [SerializeField] public ParticleSystem deathParticles;
+    [SerializeField] public GameObject collectible;
 
     private void Start()
     {
@@ -24,8 +24,8 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         player = FindObjectOfType<Player>();
-        deathParticles = (ParticleSystem)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Particles/Death Particles.prefab", typeof(ParticleSystem));
-        collectible = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Collectible.prefab", typeof(GameObject));
+        //deathParticles = (ParticleSystem)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Particles/Death Particles.prefab", typeof(ParticleSystem));
+        //collectible = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Collectible.prefab", typeof(GameObject));
     }
 
     private void FixedUpdate()
