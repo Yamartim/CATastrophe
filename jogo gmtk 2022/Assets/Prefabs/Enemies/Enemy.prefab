@@ -123,7 +123,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.5
   hp: 0
-  maxhp: 20
+  maxhp: 8
   deathParticles: {fileID: 8328700905725203999, guid: fd82193727e00b34c8437b4a98d51cf1, type: 3}
   collectible: {fileID: 510694930590457772, guid: 68fd873c7bd8bb349af60aa25b531d78, type: 3}
 --- !u!70 &2371791088799282076

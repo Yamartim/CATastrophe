@@ -61,14 +61,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-/*
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(collision.gameObject);
-            TakeDamage(20);
+            TakeDamage(collision.gameObject.GetComponent<Dado>().valor);
         }
     }
-*/
+
 }

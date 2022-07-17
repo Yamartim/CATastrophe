@@ -11,6 +11,7 @@ public class DiceTube : MonoBehaviour
     [SerializeField]private int tam_fila = 5;
     private Queue<Dado> fila_dados;
     public int valorFinal;
+    [SerializeField] AudioSource shakeSFX;
 
 
 
@@ -72,6 +73,8 @@ public class DiceTube : MonoBehaviour
 
     public void ChacoalharDados()
     {
+        shakeSFX.pitch = Random.Range(0.5f, 1.5f);
+        shakeSFX.Play();
         foreach(Dado d in fila_dados)
         {
             RolaValor(d);
