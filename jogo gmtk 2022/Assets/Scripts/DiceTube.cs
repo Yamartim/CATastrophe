@@ -34,7 +34,7 @@ public class DiceTube : MonoBehaviour
         
     }
 
-    void AddDado(Dado d)
+    public void AddDado(Dado d)
     {
         RolaValor(d);
         d.PosRolar(valorFinal);
@@ -78,7 +78,7 @@ public class DiceTube : MonoBehaviour
         tUI.RefreshDados(GetDados());
     }
 
-    Dado[] GetDados()
+    public Dado[] GetDados()
     {
         return fila_dados.ToArray();
     }
