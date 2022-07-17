@@ -19,4 +19,10 @@ public class PlayerAnim : MonoBehaviour
         anim.SetFloat("HORI_MOVE", rb.velocity.x);
         anim.SetFloat("VERT_MOVE", rb.velocity.y);
     }
+
+    public void PlayDmgAnim()
+    {
+        anim.SetTrigger("TAKE_DAMAGE");
+    }
+
 }

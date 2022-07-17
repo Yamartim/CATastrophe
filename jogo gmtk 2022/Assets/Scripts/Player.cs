@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
     private ArmaScript arma;
+    private PlayerAnim panim;
     private GameManager gameManager;
 
     // movement
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         arma = GetComponentInChildren<ArmaScript>();
+        panim =  GetComponent<PlayerAnim>();
         gameManager = FindObjectOfType<GameManager>();
     }
 
@@ -50,6 +52,8 @@ public class Player : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         hp -= dmg;
+        panim.PlayDmgAnim();
+
         if(hp <= 0)
         {
             gameManager.GameOver();
