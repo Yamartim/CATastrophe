@@ -42,6 +42,11 @@ public class Player : MonoBehaviour
              arma.Shoot(gameObject.GetComponent<SpriteRenderer>().flipX);
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            arma.Shake();
+        }
+
     }
     
     private void FixedUpdate()

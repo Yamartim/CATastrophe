@@ -12,14 +12,6 @@ public class Generation : MonoBehaviour
         NewRoom();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            NewRoom();
-        }
-    }
-
     public void NewRoom()
     {        
         Destroy(room);

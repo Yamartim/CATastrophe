@@ -70,7 +70,7 @@ public class DiceTube : MonoBehaviour
         tUI.RefreshDados(GetDados());
     }
 
-    void ChacoalharDados()
+    public void ChacoalharDados()
     {
         foreach(Dado d in fila_dados)
         {
