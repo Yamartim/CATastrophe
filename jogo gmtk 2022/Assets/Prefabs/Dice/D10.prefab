@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6797409920982387140}
   - component: {fileID: 7714261324596954657}
   - component: {fileID: -1934387136641868320}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: D10
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2.01
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 2246753244896289436}
   - component: {fileID: 5693861627247780117}
   - component: {fileID: 7134895612007536703}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: valuetxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

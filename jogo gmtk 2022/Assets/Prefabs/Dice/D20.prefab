@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7228231803307945634}
   - component: {fileID: 4692663166042605651}
   - component: {fileID: -628590484303221100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: D20
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2.01
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 467139548826820873}
   - component: {fileID: 3000270853489673502}
   - component: {fileID: 3347110745026046995}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: valuetxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}

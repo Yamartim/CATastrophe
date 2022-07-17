@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2258454286308829440}
   - component: {fileID: 5145242157322006344}
   - component: {fileID: 2044232499247990082}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: valuetxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 5231718101170235687}
   - component: {fileID: 8319474398497610321}
   - component: {fileID: 6060851673521088473}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: D4
   m_TagString: Bullet
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2.01
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
