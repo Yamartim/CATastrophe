@@ -29,7 +29,10 @@ public class ArmaScript : MonoBehaviour
         
     }
 
-    
+    public void Shake()
+    {
+        tubo.ChacoalharDados();
+    }
     public void Shoot(bool isFlipped)
     {
         if(isFlipped){
