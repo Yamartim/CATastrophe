@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a1cb8de4c04624ea8f3618310da4b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tUI: {fileID: 0}
   tam_fila: 5
+  valorFinal: 0
+  shakeSFX: {fileID: 0}
 --- !u!114 &4178990182503551927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f51c7c9eb06e7408dfd2841e860061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleTransform: {fileID: 0}
   shootforce: 20.5
 --- !u!114 &6656870416215983921
 MonoBehaviour:
